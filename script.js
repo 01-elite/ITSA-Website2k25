@@ -14,6 +14,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
+
 // Optional: stop clicks inside navLinks from closing it
 navLinks.addEventListener('click', (e) => {
   e.stopPropagation();

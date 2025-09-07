@@ -657,6 +657,32 @@ border-radius: 30px;
     }
   }
 
+  @media (max-width: 500px) {
+    .eventSection{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+    .event
+.outerCard{
+        margin-inline: 20px;
+        padding: 10px;
+        width: fit-content;
+
+    }
+   
+    .eventSubheading{
+      font-size: 1rem;
+     
+      padding: 0 40px;
+    }
+  
+    .xyz{
+         width: fit-content;
+    }
+
+  }
+
 
 /* contact and footer */
 
