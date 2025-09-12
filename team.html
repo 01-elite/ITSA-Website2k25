@@ -1,797 +1,1138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Members</title>
+    <link rel="shortcut icon" href="output-onlinepngtools.png"  type="image/png">
     <style>
-.teamSection{
-    background-color: #f0f0f0;
-    padding: 50px 20px;
-    text-align: center;
-   font-family: 'Noto Sans', sans-serif;
-   color: rgb(61, 61, 62);
-}
-.teamHeading .heading{
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    
-}
-.teamHeading p{
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 40px;
-}
-.teamcards, .row1, .row2{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.outerCard{
-    background: transparent ;
-    border-radius: 15px;
-   
-    width: 250px;
-    transition: transform 0s, box-shadow 0.3s;
-    cursor: pointer;
-    height: 400px;
-    
-}
+        html{
+            scroll-behavior: smooth;
+        }
+        .teamSection {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            text-align: center;
+            font-family: 'Noto Sans', sans-serif;
+            color: rgb(61, 61, 62);
+        }
 
-.innerCard{
-    padding: 20px;
-    
-}
-.img{
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    height: 270px;
-    
-      filter: grayscale(100%);
-  transition: filter 0.3s ease;  
-}
-.one{
-    background-image: url("profile.png");
-    background-size: cover;
-    background-position: center;  
-}
+        .teamHeading .heading {
+            font-size: 2.5em;
+            margin-bottom: 10px;
 
-.img:hover{
-    filter: grayscale(0%);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    
-}
+        }
 
-.innerCard p{
-    color: #777;
-    font-size: 0.9em;
-}  
+        .teamHeading p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 40px;
+        }
 
-button{
-    background: none;
-    border: solid grey 1.7px;
-   border-radius: 80px;
-   align-content: center;
-    padding: 2px 20px;
-  
-}
+        .teamcards,
+        .row1,
+        .row2 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
+        .outerCard {
+            background: transparent;
+            border-radius: 15px;
 
+            width: 250px;
+            transition: transform 0s, box-shadow 0.3s;
+            cursor: pointer;
+            height: 400px;
 
-h3{
-     color: rgb(45, 113, 223);
-    margin-top: 50px;
-    font-size: 1.2em;
-       margin: 10px 0;
-  
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-}
-h2{
-    font-size: 1.7em;
+        }
 
-}
+        .innerCard {
+            padding: 20px;
 
+        }
+
+        .img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            height: 270px;
+
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .one {
+            background-image: url("profile.png");
+            background-size: cover;
+            background-position: center;
+        }
+        .Sayali{
+            background-image: url("techhead.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Prasad {
+            background-image: url("techjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Aditya {
+            background-image: url("techmember2.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Devyani {
+            background-image: url("techmember3.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Siddhi {
+            background-image: url("techmember1.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Sairaj {
+            background-image: url("techmember4.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Raj {
+            background-image: url("mediahead.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Mohit {
+            background-image: url("mediahead.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Chetan {
+            background-image: url("Mediamember4.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Anurag {
+            background-image: url("Mediamember1.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Prem{
+            background-image: url("mediamember2.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Naman {
+            background-image: url("mediamember3.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Garvita {
+            background-image: url("Prhead.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Janelle{
+            background-image: url("Prjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Saanj{
+            background-image: url("Premember3.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Pooja{
+            background-image: url("Prmember1.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Diksha{
+            background-image: url("Prmember5.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Neej{
+            background-image: url("Prmember4.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Aryan{
+            background-image: url("Prmember2.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Soham{
+            background-image: url("documenthead.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Nehal{
+            background-image: url("documentjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Bhumi{
+            background-image: url("documentmember1.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Sahas{
+            background-image: url("documentmember3.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Ayushi{
+            background-image: url("documentmember2.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Tirth{
+            background-image: url("Eventdecormember3.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Nimisha{
+            background-image: url("Eventdecormember5.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Atharva{
+             background-image: url("Eventdecorjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Vismit{
+            background-image: url("Eventdecormember1.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Sundar{
+            background-image: url("Eventdecorjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Aastha{
+            background-image: url("Eventdecorjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Riz{
+            background-image: url("Eventdecormember8.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Gayatri{
+            background-image: url("Eventdecormember7.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Miloni{
+            background-image: url("Eventdecormember2.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Shamitha{
+            background-image: url("Eventdecormember6.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Nishtha{
+            background-image: url("Eventdecormember4.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .faculty {
+            background-image: url("faculty.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Vishwangh {
+            background-image: url("president.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Sharvil {
+            background-image: url("vicepresident.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Wasim {
+            background-image: url("secretary.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Gargi {
+            background-image: url("treasurer.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Manasvi {
+            background-image: url("designhead.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Devika {
+            background-image: url("designjoint.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Manaswi {
+            background-image: url("designmember3.jpeg");
+            background-size: cover;
+            background-position: center;
+        }        
+        .Parveen {
+            background-image: url("designmember2.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Vidhisha {
+            background-image: url("designmember1.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .Vidhi{
+            background-image: url("designmember4.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .img:hover {
+            filter: grayscale(0%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .innerCard p {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        button {
+            background: none;
+            border: solid grey 1.7px;
+            border-radius: 80px;
+            align-content: center;
+            padding: 2px 20px;
+
+        }
+
+      @media screen and (max-width:768px){
+        .img{
+             filter: grayscale(0%);
+             transition: none;
+             transform: none;
+        }
+      }
+
+        h3 {
+            color: rgb(45, 113, 223);
+            margin-top: 50px;
+            font-size: 1.2em;
+            margin: 10px 0;
+
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h2 {
+
+            font-size: 1.7em;
+
+        }
     </style>
 </head>
+
 <body>
-    
-<div class="teamSection">
-<div class="teamHeading">
-    <h2 class="heading">Meet Our Team</h2>
-    <p>Our dedicated team members who make ITSA possible.</p>
-</div>
-<h2>Core Team</h2>
-<div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
+    <div class="teamSection">
+        <div class="teamHeading">
+            <h2 class="heading">Meet Our Team</h2>
+            <p>Our dedicated team members who make ITSA possible.</p>
+        </div>
+        <h2 id="Faculty">Faculty Co-ordinator</h2>
+           <div class="teamcards">
+            <div class="outerCard">
+                <div class="innerCard ">
+                    <div class="img faculty"></div>
+                    <div class="memInfo">
+                        <button>
+                            <h3>Mrs. Maya Patil</h3>
+                            </button>
+                            <p>Faculty Co-Ordinator</p>
+                            </div>
+                            </div>
+            </div>
+            </div>
 
-</div>
-</div>
+        <h2 id="Core">Core Team</h2>
+        <div class="teamcards">
+            <div class="outerCard">
+                <div class="innerCard ">
+                    <div class="img Vishwangh"></div>
+                    <div class="memInfo">
+                        <button>
+                            <h3>Mr. Vishwangh Patil</h3>
+                        </button>
+                        <p>President</p>
 
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
+                    </div>
+                </div>
 
-</div>
-</div>
+            </div>
 
-</div>
+            <div class="outerCard">
+                <div class="innerCard ">
+                    <div class="img Sharvil"></div>
+                    <div class="memInfo">
+                        <button>
+                            <h3>Mr. Sharvil Patil</h3>
+                        </button>
+                        <p>Vice President</p>
 
+                    </div>
+                </div>
 
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="outerCard">
+                <div class="innerCard ">
+                    <div class="img Wasim"></div>
+                    <div class="memInfo">
+                        <button>
+                            <h3>Mr. Wasim Patel</h3>
+                        </button>
+                        <p>Secretary</p>
 
+                    </div>
+                </div>
 
-<h2>Technical Team</h2>
+            </div>
 
 
 
-<div class="row1">
-    <div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
+            <div class="outerCard">
+                <div class="innerCard ">
+                    <div class="img Gargi"></div>
+                    <div class="memInfo">
+                        <button>
+                            <h3>Ms. Gargi Patil</h3>
+                        </button>
+                        <p>Treasurer</p>
 
-</div>
-</div>
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
+                    </div>
+                </div>
 
-</div>
-</div>
+            </div>
 
-</div>
-
-</div>
-</div>
-<div class="row2">
-    <div class="teamcards">
-
-        <div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
+        </div>
+        <h2 id="Technical">Technical Team</h2>
 
 
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
 
-</div>
-</div>
+        <div class="row1">
+            <div class="teamcards">
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Sayali"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Sayali Gaikwad</h3>
+                            </button>
+                            <p>Head</p>
 
-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Prasad"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Prsad Patil </h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row2">
+            <div class="teamcards">
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Aditya"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Aditya yadav</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Siddhi"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Siddhi Patil</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
 
 
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Sairaj"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3> Mr. Sairaj Khade</h3>
+                            </button>
+                            <p>Member</p>
 
-</div>
-</div>
+                        </div>
+                    </div>
 
-</div>
+                </div>
 
 
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Devyani"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Devyani Jadhav</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2 id="Media">Media Team</h2>
+
+
+
+        <div class="row1">
+            <div class="teamcards">
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Raj"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Raj Dudhara</h3>
+                            </button>
+                            <p>Head</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Mohit"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Mohit Meher</h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row2">
+            <div class="teamcards">
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Chetan"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Chetan Khamkar</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Anurag"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Anurag Gawli</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Prem"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Prem Nayi</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Naman"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Naman Singh</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2 id="Design">Design Team</h2>
+
+
+
+        <div class="row1">
+            <div class="teamcards">
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Manasvi"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Manasvi Kadu </h3>
+                            </button>
+                            <p>Head</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Devika"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Devika Gharat </h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row2">
+            <div class="teamcards">
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Manaswi"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Manaswi Gharat </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Miloni"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Miloni Pamale</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Vidhi"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Vidhi Jasoliya </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Parveen"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Parveen Shaikh </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img  Vidhisha"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Vidhisha sonar </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2 id="PR">Public Relation Team</h2>
+
+
+
+        <div class="row1">
+            <div class="teamcards">
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Garvita"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Garvita Sharma </h3>
+                            </button>
+                            <p>Head</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Janelle"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Janelle Fernandes</h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row2">
+            <div class="teamcards">
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Saanj"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Saanj Bari</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img  Pooja"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Pooja Sahu </h3>
+                            </button>
+                            <p>Member </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Diksha"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Diksha Gharat</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Neej"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Neej Patel</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Aryan"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Aryan Dubey</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <h2 id="Document">Documentation Team</h2>
+
+
+
+        <div class="row1">
+            <div class="teamcards">
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Soham"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Soham More</h3>
+                            </button>
+                            <p>Head</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Nehal"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Nehal More</h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row2">
+            <div class="teamcards">
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Bhumi"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Bhumi Sankhe</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Sahas"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Sahas Bochare</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Ayushi"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Ayushi Shukla</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2 id="Event">Event & Decore Team</h2>
+
+
+
+        <div class="row1">
+            <div class="teamcards">
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Tirth"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Tirth Patel</h3>
+                            </button>
+                            <p>Head</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Nimisha"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Nimisha Tamore </h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Atharva"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Atharva Khot</h3>
+                            </button>
+                            <p>Joint Head</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row2">
+            <div class="teamcards">
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Vismit"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Vismit Chaudhari</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Sundar"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Sundar Rajput </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Aastha"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Aastha Joshi</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Riz"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Mr. Riz Lopes</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Shamitha"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Shamitha Palai</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Gayatri"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Gayatri Patil</h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+                </div>
+                  <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Miloni"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Miloni Pamale </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outerCard">
+                    <div class="innerCard ">
+                        <div class="img Nishtha"></div>
+                        <div class="memInfo">
+                            <button>
+                                <h3>Ms. Nishtha Singh </h3>
+                            </button>
+                            <p>Member</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                </div>
+            </div>
+        </div>
 
     </div>
-</div>
-
-
-
-
-
-
-<h2>Media Team</h2>
-
-
-
-<div class="row1">
-    <div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="row2">
-    <div class="teamcards">
-
-        <div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-
-    </div>
-</div>
-
-
-
-
-
-
-<h2>Design Team</h2>
-
-
-
-<div class="row1">
-    <div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="row2">
-    <div class="teamcards">
-
-        <div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-
-    </div>
-</div>
-
-
-
-
-
-
-<h2>Public Relation Team</h2>
-
-
-
-<div class="row1">
-    <div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="row2">
-    <div class="teamcards">
-
-        <div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-
-    </div>
-</div>
-
-
-
-
-
-<h2>Documentation Team</h2>
-
-
-
-<div class="row1">
-    <div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="row2">
-    <div class="teamcards">
-
-        <div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-
-    </div>
-</div>
-
-
-
-
-
-
-<h2>Event & Decore Team</h2>
-
-
-
-<div class="row1">
-    <div class="teamcards">
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-</div>
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="row2">
-    <div class="teamcards">
-
-        <div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="outerCard">
-<div class="innerCard ">
-<div class="img one"></div>
-<div class="memInfo">
-<button>
-<h3>Sayali Gaikwad</h3>
-</button>
-<p>President</p>
-
-</div>
-</div>
-
-</div>
-
-
-
-    </div>
-</div>
-
-</div>
-    
 </body>
+
 </html>

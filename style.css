@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Noto Sans', sans-serif;
@@ -531,7 +534,33 @@ align-items: center;
 .viewTeam:hover {
   background: rgba(0, 114, 129, 0.9);
 }
+@media screen and (max-width:768px){
+  .teamCircle .teamIMG {
+  filter: brightness(1);
+}
+.teamCircle .teamText {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  margin-top: 12px;
+}
+.teamCircle:hover .teamIMG {
+  transition: none;
+  transform: none;
+ 
+}
 
+/* Push other circles slightly when any is hovered */
+.circles:hover .teamCircle {
+  transform: none;
+  transition: none;
+}
+.circles .teamCircle:hover {
+  transform: none;
+  transition: none;
+  /* hovered one overrides push */
+}
+}
 
 
 
@@ -653,7 +682,8 @@ border-radius: 30px;
     }
   
     .xyz{
-         width: fit-content;
+         width: 100%;
+         height: 200px;
     }
   }
 
@@ -678,7 +708,8 @@ border-radius: 30px;
     }
   
     .xyz{
-         width: fit-content;
+         width: 100%;
+    height: 180px;
     }
 
   }
