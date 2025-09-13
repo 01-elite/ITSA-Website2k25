@@ -4,35 +4,116 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Technova — Events</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* || General and Base Styles */
     body {
       margin: 0;
-      font-family: 'Raleway', sans-serif;
+      padding: 0;
+      font-family: 'Cinzel', serif;
       background-color: #0d0d0d;
       color: #f0f0f0;
       line-height: 1.6;
-      padding: 40px 20px;
-      position: relative;
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      width: 100%;
+    }
+    h2.heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 900;
+      text-shadow: 0 0 8px #ff4d4d;
+      text-align: center;
+      padding-top: 50px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* popup */
+
+
+    /* navbar */
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  height: 70px;
+  position: fixed;
+  width: 70%;
+  top: 20px;
+  background: rgba(34, 0, 0, 0.592);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.navlogo {
+  background-image: url("ITSAlogo2.png");
+  filter: brightness(1);
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.navlinks {
+  display: flex;
+  gap: 25px;
+  flex-direction: row;
+}
+
+.navlinks a {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navlinks a:hover {
+  color: #ff4d4d;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+
+    /* || Popup */
     .popup {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(5px);
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      overflow-x: hidden; /* prevent horizontal scroll */
     }
     .popup-content {
+      position: relative;
       background: #1a1a1a;
       padding: 20px;
       border-radius: 10px;
@@ -40,18 +121,18 @@
       width: 90%;
       box-sizing: border-box;
       text-align: center;
-      box-shadow: 0 0 25px rgba(255,77,77,0.6);
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
       animation: fadeIn 0.5s ease;
-      overflow-y: auto;  /* scroll vertically if too tall */
-      max-height: 90vh;  /* don’t exceed viewport height */
+      overflow-y: auto;
+      max-height: 90vh;
       word-wrap: break-word;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9);}
-      to { opacity: 1; transform: scale(1);}
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
     .popup h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cinzel', serif;
       color: #ff4d4d;
       margin-bottom: 15px;
       font-size: 1.5rem;
@@ -60,7 +141,6 @@
       color: #ccc;
       margin-bottom: 20px;
       font-size: 0.95rem;
-      word-wrap: break-word;
     }
     .popup button {
       background: #ff4d4d;
@@ -73,20 +153,28 @@
       cursor: pointer;
       transition: 0.3s;
       flex: 1 1 auto;
-      min-width: 0;
-      word-break: break-word;
     }
     .popup button:hover {
       background: #cc0000;
     }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      color: #fff;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+    }
 
-    /* background floating orbs */
+    /* || Background Orbs */
     .orb {
       position: absolute;
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,77,77,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 77, 77, 0.3) 0%, transparent 70%);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -95,83 +183,98 @@
       filter: blur(60px);
       opacity: 0.7;
     }
+
+    /* || Hero Section */
     .technova-events {
-      background-image: url('conjuring.jpeg');
-      background-size: cover;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 30px;
       border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .events-hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       margin-bottom: 40px;
       position: relative;
       z-index: 1;
+      height: 100vh;
+      overflow-x: hidden;
     }
-
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
     .events-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
+      font-size: clamp(2.5rem, 12vw, 170px);
       margin-bottom: 10px;
       color: #fff;
+      text-transform: uppercase;
+      font-weight: 900;
       text-shadow: 0 0 8px #ff4d4d;
       animation: flicker 4s infinite;
     }
-
-    /* flicker animation */
     @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {opacity: 1; text-shadow: 0 0 8px #ff4d4d, 0 0 15px #ff1a1a;}
-      20%, 24%, 55% {opacity: 0.7; text-shadow: none;}
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 8px #ff4d4d, 0 0 15px #ff1a1a; }
+      20%, 24%, 55% { opacity: 0.7; text-shadow: none; }
     }
-
     .events-hero p {
       max-width: 700px;
       margin: 0 auto;
       color: #ccc;
-      font-size: 1rem;
+      font-size: 1.3rem;
     }
 
+    /* || Current Events Grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      width: 100%;
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       position: relative;
       z-index: 1;
+      justify-items: center;
     }
-
     .card {
-      background-color: #1a1a1a;
+      backdrop-filter: blur(5px);
       border: 1px solid #333;
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
-      opacity: 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
       transform: translateY(30px);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 10px 25px rgba(255,77,77,0.5);
+      box-shadow: 0 10px 25px rgba(255, 77, 77, 0.5);
     }
-
     .card h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cinzel', serif;
       font-size: 1.5rem;
       margin-bottom: 8px;
       color: #ff4d4d;
     }
-
     .card p {
       font-size: 0.95rem;
       color: #ccc;
       flex-grow: 1;
     }
-
     .tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -181,13 +284,11 @@
       border-radius: 5px;
       margin-bottom: 10px;
     }
-
     .buttons {
       margin-top: 15px;
       display: flex;
       gap: 10px;
     }
-
     .btn {
       flex: 1;
       text-align: center;
@@ -200,221 +301,401 @@
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
     }
-
     .btn:hover {
       background-color: #cc0000;
       transform: scale(1.05);
     }
 
-    /* Past events */
-    .past-events {
-      max-width: 900px;
-      margin: 60px auto 0;
-      text-align: center;
+    /* || Past Events Section */
+    .eventSection {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
     }
-    .past-events h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #fff;
-      text-shadow: 0 0 8px #ff4d4d;
-    }
-    .past-grid {
+    .eventCards {
+      margin-top: 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      width: 100%;
+      gap: 80px;
+      padding: 50px 0;
+      justify-items: center;
+      /* background-color: pink; */
+      line-break: auto;
     }
-    .past-card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    .outerCard {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
-    .past-card h3 {
+    .f-3:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255, 77, 77, 0.5);
+    }
+    .info {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    .n-1 {
+      font-size: 2.8rem;
+      font-weight: 200;
+      color: white;
+      line-height: 1;
+    }
+    .f-1 {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .n-2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
       color: #ff4d4d;
-      margin-bottom: 10px;
-      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
     }
-    .past-card p {
-      color: #ccc;
+    .eventParagraph {
+      color: #959899;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+    }
+    .f-3 {
+      filter: grayscale(50%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: filter 0.3s ease;
+    }
+    .f-3:hover {
+      filter: grayscale(0%);
+    }
+    .im1 { background-image: url("Poster1.png"); }
+    .im2 { background-image: url("Poster2.png"); }
+    .im3 { background-image: url("Poster3.jpeg"); }
+    .im4 { background-image: url("Poster4.png"); }
+
+   
+
+    /* || Responsive Design */
+    @media (max-width: 1008px) {
+    
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+    #background-video {
+        position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+      }
+      body {
+        background-color: #000000;
+      }
+      main {
+        padding: 20px 10px;
+      }
+      .grid {
+        gap: 30px;
+      }
+      .events-hero p {
+        font-size: 1rem;
+      }
+      .eventCards {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .technova-events {
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .events-hero h1 {
+        font-size: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .card {
+        padding: 15px;
+      }
+      .btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
+      .info {
+        flex-direction: column;
+        gap: 5px;
+      }
+      .n-1 {
+        font-size: 2rem;
+      }
+      .n-2 {
+        font-size: 1.2rem;
+      }
+    }
+
+
+    /* || Footer */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px 10px;
       font-size: 0.9rem;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      z-index: 10;
     }
-    .past-events img{
-        height: 200px;
-        border-radius: 8px;
-        width: 200px;
-        object-fit: contain;
+    footer a {
+      color: #ff4d4d;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: rgb(204, 0, 0);
+    }
+
+
+        @media (max-width: 1008px) {
+    
+      
+      footer {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.8rem;
+      }
     }
 
     /* MEDIA QUERIES */
-    @media(max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
-      .events-hero h1 { font-size: 1.8rem; }
-      .events-hero p { font-size: 0.9rem; padding: 0 10px; }
-      .card { padding: 15px; transition: none; }
-      .card:hover { transform: none; box-shadow: 0 5px 15px rgba(0,0,0,0.6); }
-      .card h3 { font-size: 1.3rem; }
-      .card p { font-size: 0.85rem; }
-      .btn { font-size: 0.8rem; padding: 7px 10px; transition: none; }
-      .btn:hover { transform: none; background-color: #ff4d4d; }
-      .popup-content { width: 90%; max-width: 95%; padding: 15px; font-size: 0.9rem; border-radius: 8px; }
-      .popup h2 { font-size: 1.3rem; }
-      .popup p { font-size: 0.85rem; }
-      .past-events h2 { font-size: 1.6rem; }
-      .past-card { padding: 15px; }
-      .past-card h3 { font-size: 1.1rem; }
-      .past-card p { font-size: 0.85rem; }
-        .popup-content .buttons {
+@media (max-width: 1024px) {
+ 
+  .menu-toggle {
+    display: block;
+  }
+ .navlinks {
+    position: absolute;
+    top: 100px;
+    right: 20px;
     flex-direction: column;
-    gap: 10px;
-  }
-  .popup-content button {
-    width: 100%;
-  }
-    }
+    gap: 50px;
+    max-height: 0; 
+    border-radius: 12px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    background: none; 
+}
 
-    @media(max-width: 400px) {
-      body { padding: 20px 10px; }
-      .events-hero h1 { font-size: 1.5rem; }
-      .grid { gap: 20px; }
-      .card { border-radius: 8px; }
-      .btn { padding: 6px 8px; font-size: 0.75rem; }
-      .popup-content { width: 90%; max-width: none; padding: 15px; border-radius: 8px; }
-      .popup h2 { font-size: 1.2rem; }
-      .popup p { font-size: 0.85rem; }
-      .popup-content .buttons { flex-direction: column; gap: 8px; }
-    }
+/* Flipped background image only */
+.navlinks::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  
+   
+    z-index: -1; /* keep it behind the links */
+}
+
+
+  .navlinks.active {
+    max-height: 500px;
+    padding: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+
+ 
+  .navbar {
+    width: 90%;
+    padding: 0px 10px;
+  }
+}
+
+
   </style>
 </head>
 <body>
-    
-  <!-- popup -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h2 id="popup-title">Event Rules</h2>
-      <p id="popup-text">Some spooky rules go here...</p>
-      <button id="registerBtn">Register Now</button>
-      <button onclick="closePopup()">Close</button>
+  <div class="navbar">
+    <div class="navlogo"></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="navlinks" id="navlinks">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#team">TEAM</a>
+      <a href="#event" class="active">EVENTS</a>
+      <a href="#contact">CONTACT</a>
     </div>
   </div>
-
-  <!-- background orbs -->
-  <div class="orb" id="orb1"></div>
-  <div class="orb" id="orb2"></div>
-  <div class="orb" id="orb3"></div>
-<section class="technova-events">
-  <section class="events-hero">
-    <h1>Technova: Where Darkness Meets Innovation</h1>
-    <p>Step into the eerie world of technology and mystery — four thrilling events await: two technical challenges and two non-technical adventures.</p>
-  </section>
-
-  <section class="grid">
-    <div class="card">
-      <div>
-        <span class="tag">Technical</span>
-        <h3>Code of Shadows</h3>
-        <p>Not just coding — conjuring solutions from the void. Face logic puzzles and speed challenges under the haunted glow of Technova.</p>
-      </div>
-      <div class="buttons">
-        <button class="btn">Register</button>
-        <button class="btn rule-btn" data-event="Code of Shadows">Rules</button>
+  <main>
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h2 id="popup-title">Event Rules</h2>
+        <p id="popup-text">Some spooky rules go here...</p>
+        <button id="registerBtn">Register Now</button>
+        <button onclick="closePopup()">Close</button>
       </div>
     </div>
-
-    <div class="card">
-      <div>
-        <span class="tag">Technical</span>
-        <h3>Haunted Circuits</h3>
-        <p>Dare to tinker with the unknown. Fix cursed circuits and create eerie prototypes that might awaken the unseen.</p>
+    <div class="orb" id="orb1"></div>
+    <div class="orb" id="orb2"></div>
+    <div class="orb" id="orb3"></div>
+    <section class="technova-events">
+      <section class="events-hero">
+        <video autoplay muted loop playsinline id="background-video">
+          <source src="horror.mp4" type="video/mp4">
+          <source src="horror.webm" type="video/webm">
+        </video>
+        <h1 id="bigh1">Technova</h1>
+        <p>Step into the eerie world of technology and mystery — four thrilling events await: two technical challenges and two non-technical adventures.</p>
+      </section>
+      <section class="grid">
+        <div class="card">
+          <div>
+            <span class="tag">Technical</span>
+            <h3>Code of Shadows</h3>
+            <p>Not just coding — conjuring solutions from the void. Face logic puzzles and speed challenges under the haunted glow of Technova.</p>
+          </div>
+          <div class="buttons">
+            <button class="btn">Register</button>
+            <button class="btn rule-btn" data-event="Code of Shadows">Rules</button>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <span class="tag">Technical</span>
+            <h3>Haunted Circuits</h3>
+            <p>Dare to tinker with the unknown. Fix cursed circuits and create eerie prototypes that might awaken the unseen.</p>
+          </div>
+          <div class="buttons">
+            <button class="btn">Register</button>
+            <button class="btn rule-btn" data-event="Haunted Circuits">Rules</button>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <span class="tag">Non-Technical</span>
+            <h3>Phantom Quest</h3>
+            <p>An interactive hunt laced with cryptic clues and illusions. Only the brave unravel the secrets hidden in Technova’s haunted halls.</p>
+          </div>
+          <div class="buttons">
+            <button class="btn">Register</button>
+            <button class="btn rule-btn" data-event="Phantom Quest">Rules</button>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <span class="tag">Non-Technical</span>
+            <h3>Conjure the Stage</h3>
+            <p>Unleash your wit, creativity, and stage presence. From haunted debates to chilling charades — entertainment rises from the dark.</p>
+          </div>
+          <div class="buttons">
+            <button class="btn">Register</button>
+            <button class="btn rule-btn" data-event="Conjure the Stage">Rules</button>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="eventSection">
+      <h2 class="heading">Past Events</h2>
+      <div class="eventCards">
+        <div class="outerCard">
+          <div class="info">
+            <div class="n-1">01</div>
+            <div class="f-1">
+              <div class="n-2">Peer to Peer Talk</div>
+              <p class="eventParagraph">A peer-to-peer session where a senior shared valuable tips and strategies for GATE preparation.</p>
+            </div>
+          </div>
+          <div class="f-3 im1"></div>
+        </div>
+        <div class="outerCard">
+          <div class="info">
+            <div class="n-1">02</div>
+            <div class="f-1">
+              <div class="n-2">Alumni Talk</div>
+              <p class="eventParagraph">An alumni talk where a senior guided students about pursuing higher studies abroad.</p>
+            </div>
+          </div>
+          <div class="f-3 im2"></div>
+        </div>
+        <div class="outerCard">
+          <div class="info">
+            <div class="n-1">03</div>
+            <div class="f-1">
+              <div class="n-2">CreatiVerse 2k25</div>
+              <p class="eventParagraph">An Independence Day celebration by ITSA, featuring games, gifts, and community events to honor 15 August.</p>
+            </div>
+          </div>
+          <div class="f-3 im3"></div>
+        </div>
       </div>
-      <div class="buttons">
-        <button class="btn">Register</button>
-        <button class="btn rule-btn" data-event="Haunted Circuits">Rules</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div>
-        <span class="tag">Non-Technical</span>
-        <h3>Phantom Quest</h3>
-        <p>An interactive hunt laced with cryptic clues and illusions. Only the brave unravel the secrets hidden in Technova’s haunted halls.</p>
-      </div>
-      <div class="buttons">
-        <button class="btn">Register</button>
-        <button class="btn rule-btn" data-event="Phantom Quest">Rules</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div>
-        <span class="tag">Non-Technical</span>
-        <h3>Conjure the Stage</h3>
-        <p>Unleash your wit, creativity, and stage presence. From haunted debates to chilling charades — entertainment rises from the dark.</p>
-      </div>
-      <div class="buttons">
-        <button class="btn">Register</button>
-        <button class="btn rule-btn" data-event="Conjure the Stage">Rules</button>
-      </div>
-    </div>
-  </section>
-  </section>
-
-  <!-- past events -->
-  <section class="past-events">
-    <h2>Past Events</h2>
-    <div class="past-grid">
-      <div class="past-card">
-        <h3>Peer to Peer Talk</h3>
-        <img src="Poster1.png" alt="">
-        <p> A peer-to-peer session where a senior shared valuable tips and strategies for GATE preparation.</p>
-      </div>
-      <div class="past-card">
-        <h3>Alumni Talk</h3>
-        <img src="Poster2.png" alt="">
-        <p>An alumni talk where a senior guided students about pursuing higher studies abroad.</p>
-      </div>
-      <div class="past-card">
-        <h3>CreatiVerse 2k25</h3>
-        <img src="Poster3.jpeg" alt="">
-        <p>An Independence Day celebration by ITSA,featuring games, gifts, and community events to honor 15 August</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GSAP -->
+    </section>
+  </main>
+  <footer>
+    <a href="#home">© 2025 ITSA Committee | Made with ❤️ by <span>Students</span></a>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
-    // animate cards
+    // GSAP animations for cards
     gsap.to(".card", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 });
-
-    // floating orb animations
-   if(window.innerWidth > 600){
-     gsap.to("#orb1", { x: -200, y: -150, duration: 8, repeat: -1, yoyo: true, ease: "sine.inOut" });
-    gsap.to("#orb2", { x: 200, y: 100, duration: 10, repeat: -1, yoyo: true, ease: "sine.inOut" });
-    gsap.to("#orb3", { x: -150, y: 200, duration: 12, repeat: -1, yoyo: true, ease: "sine.inOut" });
-
-    // color shifting
-    const colors = ["rgba(255,77,77,0.4)", "rgba(128,0,128,0.4)", "rgba(0,255,100,0.3)"];
-    function shiftColors() {
-      document.querySelectorAll('.orb').forEach((orb) => {
-        gsap.to(orb, { background: `radial-gradient(circle, ${colors[Math.floor(Math.random()*colors.length)]} 0%, transparent 70%)`, duration: 3, ease: "sine.inOut" });
-      });
+    
+    // Floating orb animations
+    if(window.innerWidth > 600){
+      gsap.to("#orb1", { x: -200, y: -150, duration: 8, repeat: -1, yoyo: true, ease: "sine.inOut" });
+      gsap.to("#orb2", { x: 200, y: 100, duration: 10, repeat: -1, yoyo: true, ease: "sine.inOut" });
+      gsap.to("#orb3", { x: -150, y: 200, duration: 12, repeat: -1, yoyo: true, ease: "sine.inOut" });
+      const colors = ["rgba(255,77,77,0.4)", "rgba(128,0,128,0.4)", "rgba(0,255,100,0.3)"];
+      function shiftColors() {
+        document.querySelectorAll('.orb').forEach((orb) => {
+          gsap.to(orb, { background: `radial-gradient(circle, ${colors[Math.floor(Math.random()*colors.length)]} 0%, transparent 70%)`, duration: 3, ease: "sine.inOut" });
+        });
+      }
+      setInterval(shiftColors, 3000);
     }
-    setInterval(shiftColors, 3000);
-
-   }
-    // popup logic
+    
+    // Popup logic
     const popup = document.getElementById("popup");
     const popupTitle = document.getElementById("popup-title");
     const popupText = document.getElementById("popup-text");
-
     const rules = {
       "Code of Shadows": "Rules for Code of Shadows: Solve coding puzzles in limited time. No external help. Be ready for surprises.",
       "Haunted Circuits": "Rules for Haunted Circuits: Debug and build circuits with limited components. Time-bound tasks. No outside kits allowed.",
       "Phantom Quest": "Rules for Phantom Quest: Teams follow cryptic clues. Respect time limits. First to finish wins.",
       "Conjure the Stage": "Rules for Conjure the Stage: Perform with creativity. Keep within time. Scary twists may be added!"
     };
-
     document.querySelectorAll(".rule-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const eventName = btn.dataset.event;
@@ -423,11 +704,15 @@
         popup.style.display = "flex";
       });
     });
-
     function closePopup() {
       popup.style.display = "none";
     }
     window.onclick = (e) => { if (e.target === popup) closePopup(); };
+
+    // Mobile menu toggle
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("navlinks").classList.toggle("active");
+    });
   </script>
 </body>
 </html>

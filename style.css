@@ -32,7 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  height: 100px;
+  height: 70px;
   position: fixed;
   width: 70%;
   top: 20px;
@@ -672,6 +672,19 @@ border-radius: 30px;
     background-image: url("Poster3.jpeg");  
 }
 
+#eventButton{
+background-image: linear-gradient(120deg, rgb(35, 171, 255) , #000000);
+  border-radius: 40px;
+  color: rgb(255, 255, 255);
+  padding: 10px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 1.9rem;
+}
+
+
 
 @media (max-width: 1008px) {
     .outerCard{
@@ -824,6 +837,12 @@ border-radius: 30px;
         gap: 8px;
         text-align: center;
         font-size: 0.8rem;
+      }
+      .eventButton{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
        footer a[style] {

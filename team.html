@@ -9,13 +9,85 @@
     <style>
         html{
             scroll-behavior: smooth;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+        /* || Navbar */
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  height: 70px;
+  position: fixed;
+  width: 70%;
+  top: 20px;
+  background: rgba(0, 56, 63, 0.352);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.navlogo {
+  background-image: url("ITSAlogo.png");
+  filter: brightness(1);
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.navlinks {
+  display: flex;
+  gap: 25px;
+  flex-direction: row;
+}
+
+.navlinks a {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navlinks a:hover {
+  color: #417aff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* team section */
         .teamSection {
             background-color: #f0f0f0;
-            padding: 50px 20px;
+            padding: 100px 20px;
             text-align: center;
             font-family: 'Noto Sans', sans-serif;
             color: rgb(61, 61, 62);
+            width: 100%;
         }
 
         .teamHeading .heading {
@@ -303,6 +375,7 @@
         .img:hover {
             filter: grayscale(0%);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);  
 
         }
 
@@ -343,10 +416,110 @@
             font-size: 1.7em;
 
         }
+
+
+         /* || Footer */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #fff;
+      backdrop-filter: blur(100px);
+      z-index: 10;
+    }
+    footer a {
+      color: #00a2ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #0085cc;
+    }
+
+
+        @media (max-width: 1008px) {
+    
+      
+      footer {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* MEDIA QUERIES */
+@media (max-width: 1024px) {
+ 
+  .menu-toggle {
+    display: block;
+  }
+ .navlinks {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    flex-direction: column;
+    gap: 50px;
+    max-height: 0; 
+    border-radius: 12px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    background: none; 
+}
+
+/* Flipped background image only */
+.navlinks::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  
+   
+    z-index: -1; /* keep it behind the links */
+}
+
+
+  .navlinks.active {
+    max-height: 500px;
+    padding: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+
+ 
+  .navbar {
+    width: 90%;
+    padding: 0px 10px;
+  }
+}
+
+
+
     </style>
 </head>
 
 <body>
+<!-- Navbar -->
+<div class="navbar">
+  <div class="navlogo"></div>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+  <!--  Nav Links -->
+  <div class="navlinks" id="navlinks">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#team">TEAM</a>
+    <a href="#event">EVENTS</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</div>
+
     <div class="teamSection">
         <div class="teamHeading">
             <h2 class="heading">Meet Our Team</h2>
@@ -358,10 +531,11 @@
                 <div class="innerCard ">
                     <div class="img faculty"></div>
                     <div class="memInfo">
+                        <p>Faculty Co-Ordinator</p>
                         <button>
                             <h3>Mrs. Maya Patil</h3>
                             </button>
-                            <p>Faculty Co-Ordinator</p>
+                            
                             </div>
                             </div>
             </div>
@@ -373,10 +547,11 @@
                 <div class="innerCard ">
                     <div class="img Vishwangh"></div>
                     <div class="memInfo">
+                        <p>President</p>
                         <button>
                             <h3>Mr. Vishwangh Patil</h3>
                         </button>
-                        <p>President</p>
+                        
 
                     </div>
                 </div>
@@ -387,10 +562,11 @@
                 <div class="innerCard ">
                     <div class="img Sharvil"></div>
                     <div class="memInfo">
+                        <p>Vice President</p>
                         <button>
                             <h3>Mr. Sharvil Patil</h3>
                         </button>
-                        <p>Vice President</p>
+                        
 
                     </div>
                 </div>
@@ -402,10 +578,11 @@
                 <div class="innerCard ">
                     <div class="img Wasim"></div>
                     <div class="memInfo">
+                        <p>Secretary</p>
                         <button>
                             <h3>Mr. Wasim Patel</h3>
                         </button>
-                        <p>Secretary</p>
+                        
 
                     </div>
                 </div>
@@ -418,10 +595,11 @@
                 <div class="innerCard ">
                     <div class="img Gargi"></div>
                     <div class="memInfo">
+                        <p>Treasurer</p>
                         <button>
                             <h3>Ms. Gargi Patil</h3>
                         </button>
-                        <p>Treasurer</p>
+                        
 
                     </div>
                 </div>
@@ -439,10 +617,11 @@
                     <div class="innerCard ">
                         <div class="img Sayali"></div>
                         <div class="memInfo">
+                            <p>Head</p>
                             <button>
                                 <h3>Ms. Sayali Gaikwad</h3>
                             </button>
-                            <p>Head</p>
+                            
 
                         </div>
                     </div>
@@ -451,10 +630,11 @@
                     <div class="innerCard ">
                         <div class="img Prasad"></div>
                         <div class="memInfo">
+                             <p>Joint Head</p>
                             <button>
                                 <h3>Mr. Prsad Patil </h3>
                             </button>
-                            <p>Joint Head</p>
+                           
 
                         </div>
                     </div>
@@ -470,10 +650,11 @@
                     <div class="innerCard ">
                         <div class="img Aditya"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Aditya yadav</h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -484,10 +665,11 @@
                     <div class="innerCard ">
                         <div class="img Siddhi"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Ms. Siddhi Patil</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -499,10 +681,11 @@
                     <div class="innerCard ">
                         <div class="img Sairaj"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3> Mr. Sairaj Khade</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -514,10 +697,11 @@
                     <div class="innerCard ">
                         <div class="img Devyani"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Ms. Devyani Jadhav</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -544,10 +728,11 @@
                     <div class="innerCard ">
                         <div class="img Raj"></div>
                         <div class="memInfo">
+                            <p>Head</p>
                             <button>
                                 <h3>Mr. Raj Dudhara</h3>
                             </button>
-                            <p>Head</p>
+                            
 
                         </div>
                     </div>
@@ -556,10 +741,11 @@
                     <div class="innerCard ">
                         <div class="img Mohit"></div>
                         <div class="memInfo">
+                             <p>Joint Head</p>
                             <button>
                                 <h3>Mr. Mohit Meher</h3>
                             </button>
-                            <p>Joint Head</p>
+                           
 
                         </div>
                     </div>
@@ -575,10 +761,11 @@
                     <div class="innerCard ">
                         <div class="img Chetan"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Chetan Khamkar</h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -589,10 +776,11 @@
                     <div class="innerCard ">
                         <div class="img Anurag"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Anurag Gawli</h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -604,10 +792,11 @@
                     <div class="innerCard ">
                         <div class="img Prem"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Prem Nayi</h3>
                             </button>
-                            <p>Member</p>
+                        
 
                         </div>
                     </div>
@@ -619,10 +808,11 @@
                     <div class="innerCard ">
                         <div class="img Naman"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Naman Singh</h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -649,10 +839,11 @@
                     <div class="innerCard ">
                         <div class="img Manasvi"></div>
                         <div class="memInfo">
+                             <p>Head</p>
                             <button>
                                 <h3>Ms. Manasvi Kadu </h3>
                             </button>
-                            <p>Head</p>
+                           
 
                         </div>
                     </div>
@@ -661,10 +852,11 @@
                     <div class="innerCard ">
                         <div class="img Devika"></div>
                         <div class="memInfo">
+                             <p>Joint Head</p>
                             <button>
                                 <h3>Ms. Devika Gharat </h3>
                             </button>
-                            <p>Joint Head</p>
+                           
 
                         </div>
                     </div>
@@ -680,39 +872,29 @@
                     <div class="innerCard ">
                         <div class="img Manaswi"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Manaswi Gharat </h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
 
                 </div>
 
-                <div class="outerCard">
-                    <div class="innerCard ">
-                        <div class="img Miloni"></div>
-                        <div class="memInfo">
-                            <button>
-                                <h3>Ms. Miloni Pamale</h3>
-                            </button>
-                            <p>Member</p>
-
-                        </div>
-                    </div>
-
-                </div>
+              
 
 
                 <div class="outerCard">
                     <div class="innerCard ">
                         <div class="img Vidhi"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Vidhi Jasoliya </h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -724,10 +906,11 @@
                     <div class="innerCard ">
                         <div class="img Parveen"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Ms. Parveen Shaikh </h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -739,10 +922,11 @@
                     <div class="innerCard ">
                         <div class="img  Vidhisha"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Ms. Vidhisha sonar </h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -769,10 +953,11 @@
                     <div class="innerCard ">
                         <div class="img Garvita"></div>
                         <div class="memInfo">
+                             <p>Head</p>
                             <button>
                                 <h3>Ms. Garvita Sharma </h3>
                             </button>
-                            <p>Head</p>
+                           
 
                         </div>
                     </div>
@@ -781,10 +966,11 @@
                     <div class="innerCard ">
                         <div class="img Janelle"></div>
                         <div class="memInfo">
+                            <p>Joint Head</p>
                             <button>
                                 <h3>Ms. Janelle Fernandes</h3>
                             </button>
-                            <p>Joint Head</p>
+                            
 
                         </div>
                     </div>
@@ -800,10 +986,11 @@
                     <div class="innerCard ">
                         <div class="img Saanj"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Saanj Bari</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -814,10 +1001,11 @@
                     <div class="innerCard ">
                         <div class="img  Pooja"></div>
                         <div class="memInfo">
+                             <p>Member </p>
                             <button>
                                 <h3>Ms. Pooja Sahu </h3>
                             </button>
-                            <p>Member </p>
+                           
 
                         </div>
                     </div>
@@ -829,10 +1017,11 @@
                     <div class="innerCard ">
                         <div class="img Diksha"></div>
                         <div class="memInfo">
+                             <p>Member </p>
                             <button>
                                 <h3>Ms. Diksha Gharat</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -844,10 +1033,11 @@
                     <div class="innerCard ">
                         <div class="img Neej"></div>
                         <div class="memInfo">
+                             <p>Member </p>
                             <button>
                                 <h3>Mr. Neej Patel</h3>
                             </button>
-                            <p>Member</p>
+                          
 
                         </div>
                     </div>
@@ -859,10 +1049,11 @@
                     <div class="innerCard ">
                         <div class="img Aryan"></div>
                         <div class="memInfo">
+                             <p>Member </p>
                             <button>
                                 <h3>Mr. Aryan Dubey</h3>
                             </button>
-                            <p>Member</p>
+                         
 
                         </div>
                     </div>
@@ -888,10 +1079,11 @@
                     <div class="innerCard ">
                         <div class="img Soham"></div>
                         <div class="memInfo">
+                             <p>Head</p>
                             <button>
                                 <h3>Mr. Soham More</h3>
                             </button>
-                            <p>Head</p>
+                           
 
                         </div>
                     </div>
@@ -900,10 +1092,11 @@
                     <div class="innerCard ">
                         <div class="img Nehal"></div>
                         <div class="memInfo">
+                             <p>Joint Head</p>
                             <button>
                                 <h3>Ms. Nehal More</h3>
                             </button>
-                            <p>Joint Head</p>
+                           
 
                         </div>
                     </div>
@@ -919,10 +1112,11 @@
                     <div class="innerCard ">
                         <div class="img Bhumi"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Bhumi Sankhe</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -933,10 +1127,11 @@
                     <div class="innerCard ">
                         <div class="img Sahas"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Mr. Sahas Bochare</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -948,10 +1143,11 @@
                     <div class="innerCard ">
                         <div class="img Ayushi"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Ayushi Shukla</h3>
                             </button>
-                            <p>Member</p>
+                          
 
                         </div>
                     </div>
@@ -976,10 +1172,11 @@
                     <div class="innerCard ">
                         <div class="img Tirth"></div>
                         <div class="memInfo">
+                             <p>Head</p>
                             <button>
                                 <h3>Mr. Tirth Patel</h3>
                             </button>
-                            <p>Head</p>
+                       
 
                         </div>
                     </div>
@@ -988,10 +1185,11 @@
                     <div class="innerCard ">
                         <div class="img Nimisha"></div>
                         <div class="memInfo">
+                             <p>Joint Head</p>
                             <button>
                                 <h3>Ms. Nimisha Tamore </h3>
                             </button>
-                            <p>Joint Head</p>
+                           
 
                         </div>
                     </div>
@@ -1003,10 +1201,11 @@
                     <div class="innerCard ">
                         <div class="img Atharva"></div>
                         <div class="memInfo">
+                             <p>Joint Head</p>
                             <button>
                                 <h3>Mr. Atharva Khot</h3>
                             </button>
-                            <p>Joint Head</p>
+                           
 
                         </div>
                     </div>
@@ -1022,10 +1221,11 @@
                     <div class="innerCard ">
                         <div class="img Vismit"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Vismit Chaudhari</h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -1036,10 +1236,11 @@
                     <div class="innerCard ">
                         <div class="img Sundar"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Sundar Rajput </h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -1051,10 +1252,11 @@
                     <div class="innerCard ">
                         <div class="img Aastha"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Ms. Aastha Joshi</h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -1066,10 +1268,10 @@
                     <div class="innerCard ">
                         <div class="img Riz"></div>
                         <div class="memInfo">
+                            <p>Member</p>
                             <button>
                                 <h3>Mr. Riz Lopes</h3>
-                            </button>
-                            <p>Member</p>
+                           </button>
 
                         </div>
                     </div>
@@ -1080,10 +1282,11 @@
                     <div class="innerCard ">
                         <div class="img Shamitha"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Shamitha Palai</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -1094,10 +1297,11 @@
                     <div class="innerCard ">
                         <div class="img Gayatri"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Gayatri Patil</h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -1106,10 +1310,11 @@
                     <div class="innerCard ">
                         <div class="img Miloni"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Miloni Pamale </h3>
                             </button>
-                            <p>Member</p>
+                            
 
                         </div>
                     </div>
@@ -1118,10 +1323,11 @@
                     <div class="innerCard ">
                         <div class="img Nishtha"></div>
                         <div class="memInfo">
+                             <p>Member</p>
                             <button>
                                 <h3>Ms. Nishtha Singh </h3>
                             </button>
-                            <p>Member</p>
+                           
 
                         </div>
                     </div>
@@ -1133,6 +1339,11 @@
         </div>
 
     </div>
+
+    <footer>
+    <a href="#home" > © 2025 ITSA Committee | Made with ❤️ by <span>Students</span></a> 
+    
+  </footer>
 </body>
 
 </html>
