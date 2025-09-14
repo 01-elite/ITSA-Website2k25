@@ -86,10 +86,10 @@
       </div>
 
       <div class="about-right">
-        <img src="team.JPG" alt="ITSA team">
-        <img src="teamMeet.jpg" alt="teamMeet">
-        <img src="students.jpg" alt="students">
-    <img src="fourth.png" alt="event"class="fourth">
+        <img src="team.JPG" alt="ITSA team" class="imag">
+        <img src="teamMeet.jpg" alt="teamMeet" class="imag">
+        <img src="students.jpg" alt="students" class="imag">
+    <img src="fourth.png" alt="event"class="fourth imag">
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@
 <div class="teamContainer" id="team">
 <div class="teamHeading">
     <h2 class="team-title">Meet Our Team</h2>
-    <p>Our dedicated team members who make ITSA possible.</p>
+    <p class="teamp">Our dedicated team members who make ITSA possible.</p>
 </div>
 
 <div class="circles">
@@ -176,7 +176,7 @@
 
 
 
- <button  id="eventButton" onClick="location.href='team.html'">Meet out Team</button>
+ <button  id="eventButton" class="eventbtn" onClick="location.href='team.html'">Meet out Team</button>
 
 
 
@@ -190,12 +190,12 @@
 
   <!-- Event Section -->
 <div class="eventSection" id="event">
-    <h2 class="heading">Events & Sessions</h2>
+    <h2 class="heading headings">Events & Sessions</h2>
     <p class="eventSubheading">Stay tuned for upcoming events and sessions!</p>
 
 
 <div class="cards" id="eventCards">
-    <div class="outerCard">
+    <div class="outerCard outerCard1">
     <div class="info"><div class="n-1">01</div> 
         <div class="f-1"> <div class="n-2">Peer to Peer Talk</div> 
         <p class="eventParagraph"> A peer-to-peer session where a senior shared valuable tips and strategies for GATE preparation. </p>
@@ -206,7 +206,7 @@
 
 
 
-    <div class="outerCard">
+    <div class="outerCard outerCard2">
 
         <div class="f-2"> <div class="n-1">02</div> <div class="n-2">Alumni Talk</div> </div>
         <div class="f-3 xyz im2"></div>
@@ -217,7 +217,7 @@
 
 
 
-<div class="outerCard">
+<div class="outerCard outerCard3">
     <div class="info"><div class="n-1">03</div> 
         <div class="f-1"> <div class="n-2">CreatiVerse 2k25</div> 
         <p class="eventParagraph">An Independence Day celebration by ITSA,featuring games, gifts, and community events to honor 15 August</p>
@@ -229,7 +229,7 @@
 
 </div>
 
- <button id="eventButton"  onClick="location.href='event.html'">View more Events</button>
+ <button id="eventButton" class="eventButton" onClick="location.href='event.html'">View more Events</button>
     </div>
 
 
@@ -245,7 +245,7 @@
       </div>
 
       <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:itsa@sjcem.edu.in">itsa@sjcem.edu.in</a></p>
+        <p class="mail"><strong>Email:</strong> <a href="mailto:itsa@sjcem.edu.in">itsa@sjcem.edu.in</a></p>
         <p><strong>Phone:</strong> <a href="tel:+919145499937">+91 9145499937</a></p>
         
         <hr style="margin: 15px 0; border: 1px solid #666b6b;">
@@ -275,7 +275,9 @@
   </footer>
    
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script.js"></script>
 </body>
 </html>

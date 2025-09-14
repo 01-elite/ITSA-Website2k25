@@ -173,12 +173,12 @@
             background-position: center;
         }
         .Raj {
-            background-image: url("mediahead.jpeg");
+            background-image: url("Mediahead.jpeg");
             background-size: cover;
             background-position: center;
         }
         .Mohit {
-            background-image: url("mediahead.jpeg");
+            background-image: url("mediajoint.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -283,12 +283,12 @@
             background-position: center;
         }
         .Sundar{
-            background-image: url("Eventdecorjoint.jpeg");
+            background-image: url("eventmembersundar.jpeg");
             background-size: cover;
             background-position: center;
         }
         .Aastha{
-            background-image: url("Eventdecorjoint.jpeg");
+            background-image: url("eventmember.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -318,7 +318,7 @@
             background-position: center;
         }
         .faculty {
-            background-image: url("faculty.jpg");
+            background-image: url("faculty.webp");
             background-size: cover;
             background-position: center;
         }
@@ -343,7 +343,7 @@
             background-position: center;
         }
         .Manasvi {
-            background-image: url("designhead.jpeg");
+            background-image: url("designhead.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -492,6 +492,7 @@
 
  
   .navbar {
+    margin-left: 5%;
     width: 90%;
     padding: 0px 10px;
   }
@@ -512,11 +513,11 @@
 
   <!--  Nav Links -->
   <div class="navlinks" id="navlinks">
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#team">TEAM</a>
-    <a href="#event">EVENTS</a>
-    <a href="#contact">CONTACT</a>
+    <a href="index.html#home">HOME</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="index.html#team">TEAM</a>
+    <a href="index.html#event">EVENTS</a>
+    <a href="index.html#contact">CONTACT</a>
   </div>
 </div>
 
@@ -1344,6 +1345,52 @@
     <a href="#home" > © 2025 ITSA Committee | Made with ❤️ by <span>Students</span></a> 
     
   </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("navlinks").classList.toggle("active");
+    });
+     // GSAP Animations (responsive)
+  function initGSAP() {
+    if (window.innerWidth < 768) {
+      gsap.utils.toArray(".outerCard").forEach(card => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            end: "top 60%",
+            scrub: true,
+          },
+          opacity: 0,
+          x: -50,
+          duration: 1,
+        });
+      });
+    } else {
+      // reset if desktop
+      gsap.utils.toArray(".outerCard").forEach(card => {
+       gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            end: "top 60%",
+            scrub: true,
+          },
+          opacity: 0,
+          x: -50,
+          duration: 1,
+        });
+      });
+    }
+  }
+
+  // Init once + on resize
+  initGSAP();
+  window.addEventListener("resize", initGSAP);
+  </script>
 </body>
 
 </html>
