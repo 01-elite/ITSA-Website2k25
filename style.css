@@ -68,7 +68,7 @@ body {
 
 /* Show dropdown on hover OR when clicked */
 .dropdown:hover .dropdown-content,
-.dropdown.show .dropdown-content {
+.dropdown:focus-within .dropdown-content {
   display: block;
 }
 
