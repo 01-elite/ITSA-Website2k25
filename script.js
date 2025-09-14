@@ -210,5 +210,149 @@ timeline5.from('.contact-info',{
   x:-30,
   opacity:0,
 })
-
+}
+else{
+  const timeline2=gsap.timeline();
+  timeline2.from('.about',{
+    scrollTrigger:{
+      trigger:'.about',
+      scrub:true,
+    },
+    y:100,
+    opacity:0,
+    duration:1.5,
+  })
+  timeline2.from('.about-subtitle',{
+    scrollTrigger:{
+      trigger:'.about-subtitle',
+      scrub:true,
+    },
+    y:100,
+    opacity:0,
+    duration:1.5,
+  })
+  timeline2.from('.point',{
+    scrollTrigger:{
+      trigger:'.point',
+      scrub:true,
+    },
+    x:-100,
+    opacity:0,
+     
+  })
+  timeline2.from('.imag',{
+    scrollTrigger:{
+      trigger:'.imag',
+      scrub:true,
+    },
+    x:-100,
+    opacity:0,
+    
+  })
+const timeline3=gsap.timeline();
+ timeline3.from('.team-title',{
+    scrollTrigger:{
+      trigger:'.team-title',
+      scrub:true,
+    },
+    y:100,
+    opacity:0,
+    duration:1.5,
+ })
+timeline3.from('.teamp',{
+  scrollTrigger:{
+    trigger:'.teamp',
+    scrub:true,
+  },
+  y:100,
+  opacity:0,
+  duration:1.5,
+})
+const timeline4=gsap.timeline();
+timeline4.from('.headings',{
+  scrollTrigger:{
+   trigger:'.headings',
+   scrub:true,
+  },
+  y:100,
+  opacity:0,
+  duration:1.5,    
+})
+timeline4.from('.eventSubheading',{
+  scrollTrigger:{
+   trigger:'.eventSubheading',
+   scrub:true,
+  },
+  y:100,
+  opacity:0,
+  duration:1.5,    
+})
+timeline4.from('.outerCard1',{
+  scrollTrigger:{
+   trigger:'.outerCard1',
+   scrub:true,
+  },
+  x:-100,
+  opacity:0, 
+  duration:1,  
+})
+timeline4.from('.outerCard2',{
+  scrollTrigger:{
+   trigger:'.outerCard2',
+   scrub:true,
+  },
+  x:-100,
+  opacity:0, 
+  duration:1,  
+})
+timeline4.from('.outerCard3',{
+  scrollTrigger:{
+   trigger:'.outerCard3',
+   scrub:true,
+  },
+  x:-100,
+  opacity:0, 
+  duration:1,  
+})
+timeline3.from('.eventbtn',{
+  scrollTrigger:{
+   trigger:'.eventbtn',
+   scrub:true,
+  },
+  x:-100,
+  opacity:0, 
+})
+timeline4.from('.eventButton',{
+  scrollTrigger:{
+   trigger:'.eventButton',
+   scrub:true,
+  },
+  x:-100,
+  opacity:0, 
+})
+const timeline5=gsap.timeline();
+timeline5.from('.contact-title',{
+  scrollTrigger:{
+    trigger:'.contact-title',
+    scrub:true,
+  },
+  y:100,
+  opacity:0,
+})
+timeline5.from('.contact-text',{
+  scrollTrigger:{
+    trigger:'.contact-text',
+    scrub:true,
+  },
+  y:100,
+  opacity:0,
+})
+timeline5.from('.contact-info',{
+  scrollTrigger:{
+    trigger:'.mail',
+    scrub:true,
+  },
+  x:-30,
+  opacity:0,
+})
 }

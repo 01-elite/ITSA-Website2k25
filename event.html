@@ -111,7 +111,9 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      
     }
+    
     .popup-content {
       position: relative;
       background: #1a1a1a;
@@ -120,7 +122,7 @@
       max-width: 500px;
       width: 90%;
       box-sizing: border-box;
-      text-align: center;
+      text-align: left;
       box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
       animation: fadeIn 0.5s ease;
       overflow-y: auto;
@@ -132,7 +134,7 @@
       to { opacity: 1; transform: scale(1); }
     }
     .popup h2 {
-      font-family: 'Cinzel', serif;
+      font-family: 'snas', serif;
       color: #ff4d4d;
       margin-bottom: 15px;
       font-size: 1.5rem;
@@ -141,7 +143,9 @@
       color: #ccc;
       margin-bottom: 20px;
       font-size: 0.95rem;
-    }
+      white-space: pre-line; 
+      line-height: 1;
+    }  
     .popup button {
       background: #ff4d4d;
       border: none;
@@ -586,23 +590,14 @@
         <div class="card">
           <div>
             <span class="tag">Technical</span>
-            <h3>Code of Shadows</h3>
-            <p>Not just coding — conjuring solutions from the void. Face logic puzzles and speed challenges under the haunted glow of Technova.</p>
+            <h3>Escape the Dark Web</h3>
+            <p>Dive into the Dark Web, where every step hides a trap.
+               Crack codes, dodge phishing, and outsmart ghostly ciphers.
+              Escape the firewall before the shadows consume you.</p>
           </div>
           <div class="buttons">
-            <button class="btn">Register</button>
-            <button class="btn rule-btn" data-event="Code of Shadows">Rules</button>
-          </div>
-        </div>
-        <div class="card">
-          <div>
-            <span class="tag">Technical</span>
-            <h3>Haunted Circuits</h3>
-            <p>Dare to tinker with the unknown. Fix cursed circuits and create eerie prototypes that might awaken the unseen.</p>
-          </div>
-          <div class="buttons">
-            <button class="btn">Register</button>
-            <button class="btn rule-btn" data-event="Haunted Circuits">Rules</button>
+            <button class="btn" onclick="location.href='https://forms.gle/N1hfPcygwL6jXHjo6'">Register</button>
+            <button class="btn rule-btn" data-event="Escape the Dark Web">Rules</button>
           </div>
         </div>
         <div class="card">
@@ -612,19 +607,19 @@
             <p>A battleground where teamwork,strategy,reflexes decides whether you win or get wiped out. </p>
           </div>
           <div class="buttons">
-            <button class="btn">Register</button>
+            <button class="btn" onclick="location.href='https://forms.gle/CvBWacNwtdVophEU6'">Register</button>
             <button class="btn rule-btn" data-event="BGMI">Rules</button>
           </div>
         </div>
         <div class="card">
           <div>
             <span class="tag">Non-Technical</span>
-            <h3>Conjure the Stage</h3>
-            <p>Unleash your wit, creativity, and stage presence. From haunted debates to chilling charades — entertainment rises from the dark.</p>
+            <h3>E-FOOTBALL</h3>
+            <p>Dribble, pass, and conquer the pitch — every move counts in the ultimate digital showdown.</p>
           </div>
           <div class="buttons">
-            <button class="btn">Register</button>
-            <button class="btn rule-btn" data-event="Conjure the Stage">Rules</button>
+            <button class="btn" onclick="location.href='https://forms.gle/DGaJB2co4Yi2KgEH8'">Register</button>
+            <button class="btn rule-btn" data-event="E-FOOTBALL">Rules</button>
           </div>
         </div>
       </section>
@@ -690,30 +685,78 @@
     }
     
     // Popup logic
+
     const popup = document.getElementById("popup");
     const popupTitle = document.getElementById("popup-title");
     const popupText = document.getElementById("popup-text");
     const rules = {
-      "Code of Shadows": `Rules for Code of Shadows: Solve coding puzzles in limited time. No external help. Be ready for surprises.`,
-      "Haunted Circuits": `Rules for Haunted Circuits: Debug and build circuits with limited components. Time-bound tasks. No outside kits allowed.`,
-      "BGMI": `Rules for BGMI: 1. All team members must be present at the venue 5 minutes prior to the start of the event.
-2. Decisions made by the managing committee are final, and there will be no changes afterward.
-3. The use of abusive language is strictly prohibited, and any usage of such language will result in the team’s disqualification.
-4. All participants are required to wear their ID cards at all times.
-5. Hacking is not allowed, and sliding should be turned off.
-6. Both teams must mutually decide on a gun; if they cannot decide, the default gun to use is the M416.
-7. If the network doesn’t work properly, the game will be put on standby.
-8. Knockout matches will be conducted, and the winners will advance to the next round.`,
-      "Conjure the Stage": `Rules for Conjure the Stage: Perform with creativity. Keep within time. Scary twists may be added!`
+      "Escape the Dark Web": `General Game Rules:\n 
+      1. 6 teams (2 members each). Time is tracked per team.\n
+
+2.Fastest/correct teams advance after each stage.\n
+
+3.No external devices or help — only your knowledge.\n
+Explanation of each stage :\n
+Stage 1 – Phishing Trap\n
+Spot fake emails hidden in your inbox before they trap you.\n
+
+Stage 2 – Malware Cipher\n
+A secret word has been locked in a strange puzzle. Crack the code before others — or be left in the dark.\n
+
+Stage 3 – Ghost Binary\n
+The paper hides secrets under the light — glowing symbols and ghostly hints.
+Decode them quickly to uncover the lost tech word.\n
+
+Stage 4 – Firewall Maze\n
+Navigate the maze of blocked paths — shout ESCAPE if you survive!\n
+`,
+
+      "BGMI": ` 1.Committee decisions are final.\n
+
+2.Abusive language will lead to disqualification.\n
+
+3.Participants must wear ID cards at all times.\n
+
+4.Hacking is not allowed, and sliding must be turned off.\n
+
+5.Both teams must agree on a gun; default is M416.\n
+
+6.If network issues occur, the game will be paused.\n
+
+7.Knockout format – winners progress to the next round.`,
+
+// efootball rules
+      "E-FOOTBALL":  `1. Format: 1v1 | Dream Team squads allowed\n
+2. Match Time: 10 minutes per match (until Quarter Finals), 15 minutes per match (Semi Final & Final)\n
+3. Knockout: Lose = Out, Win = Advance\n
+4. Finals: Best of 3 matches\n
+5. Fair Play: No glitches, bugs, or toxic behavior. Pause only for substitutions/settings\n
+6. Connection: Disconnection under 5 minutes = Restart; After 5 minutes → continue with score/time\n
+7. Walkover: Team late by 10 or more minutes = Forfeit\n
+8. Proof: Screenshot of final score is compulsory\n
+9. Decisions: Organizer’s decision is final`
     };
-    document.querySelectorAll(".rule-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const eventName = btn.dataset.event;
-        popupTitle.textContent = eventName + " - Rules";
-        popupText.textContent = rules[eventName];
-        popup.style.display = "flex";
-      });
-    });
+
+
+const registerLinks = {
+  "Escape the Dark Web": "https://forms.gle/N1hfPcygwL6jXHjo6",
+  "BGMI": "https://forms.gle/CvBWacNwtdVophEU6",
+  "E-FOOTBALL": "https://forms.gle/DGaJB2co4Yi2KgEH8"
+};
+   document.querySelectorAll(".rule-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const eventName = btn.dataset.event;
+    popupTitle.textContent = eventName + " - Rules";
+    popupText.textContent = rules[eventName];
+    popup.style.display = "flex";
+
+    // set register link dynamically
+    const registerBtn = document.getElementById("registerBtn");
+    registerBtn.onclick = () => {
+      window.open(registerLinks[eventName], "_blank"); // opens in new tab
+    };
+  });
+});
     function closePopup() {
       popup.style.display = "none";
     }
