@@ -34,12 +34,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Close menu when clicking on a nav link
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-});
 
 
 
