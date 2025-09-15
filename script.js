@@ -385,3 +385,36 @@ timeline5.from('.contact-info',{
   opacity:0,
 })
 }
+
+//nav active link
+const navl = document.querySelectorAll(".navl");
+
+  navl.forEach(link => {
+    link.addEventListener("click", () => {
+      // Remove active class from all links
+      navl.forEach(l => l.classList.remove("active"));
+      // Add active class to clicked link
+      link.classList.add("active");
+    });
+  });
+
+  const sections = document.querySelectorAll(".sections");
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop -230; // adjust for navbar height
+      const sectionHeight = section.clientHeight;
+
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navl.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
