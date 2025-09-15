@@ -76,7 +76,21 @@
 .dropdown.show .dropdown-content {
   display: block;
 }
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;    /* remove absolute */
+    margin-top: 10px;    /* space below the button */
+    min-width: 100%;     /* full width under nav */
+    box-shadow: none;    /* remove shadow if you want flat style */
+    border-radius: 0;    /* optional: make it flush */
+  }
 
+  /* Optional: style dropdown links differently on mobile */
+  .dropdown-content a {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+}
 
 
 .navbar {
@@ -533,7 +547,7 @@
 
 
   .navlinks.active {
-    max-height: 500px;
+    max-height: 570px;
     padding: 90px;
   }
 }
