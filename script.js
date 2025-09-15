@@ -1,3 +1,22 @@
+
+  const dropdown = document.querySelector(".dropdown");
+  const btn = dropdown.querySelector(".dropbtn");
+
+  btn.addEventListener("click", function(e) {
+    e.preventDefault();
+    dropdown.classList.toggle("show");
+  });
+
+  // Close if clicked outside
+  window.addEventListener("click", function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+
+
+
+
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('navlinks');
 const links = navLinks.querySelectorAll('a'); // all nav links
@@ -344,6 +363,7 @@ timeline5.from('.contact-title',{
   scrollTrigger:{
     trigger:'.contact-title',
     scrub:true,
+    
   },
   y:100,
   opacity:0,
@@ -352,6 +372,9 @@ timeline5.from('.contact-text',{
   scrollTrigger:{
     trigger:'.contact-text',
     scrub:true,
+   start:"top 90%",
+   end:"top 60%",
+  //  markers:true,
   },
   y:100,
   opacity:0,
@@ -360,6 +383,9 @@ timeline5.from('.contact-info',{
   scrollTrigger:{
     trigger:'.mail',
     scrub:true,
+    start:"top 80%",
+   end:"top 50%",
+  //  markers:true,
   },
   x:-30,
   opacity:0,

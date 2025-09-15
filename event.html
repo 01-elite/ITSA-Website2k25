@@ -47,6 +47,51 @@
 
 
     /* navbar */
+
+    /* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+}
+
+/* Add arrow ▾ */
+.dropbtn::after {
+  content: " ▾";
+  font-size: 12px;
+}
+
+/* Dropdown hidden content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1;
+  margin-top: 32px;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Show dropdown on hover OR when clicked */
+.dropdown:hover .dropdown-content,
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
     .navbar {
   display: flex;
   justify-content: space-between;
@@ -561,7 +606,17 @@
       <a href="index.html#home">HOME</a>
       <a href="index.html#about">ABOUT</a>
       <a href="index.html#team">TEAM</a>
-      <a href="index.html#event" class="active">EVENTS</a>
+
+  <div class="dropdown">
+  <a href="#event" class="dropbtn active">EVENTS</a>
+  <div class="dropdown-content">
+    <a href="event.html#upcoming" class="active">TECHNOVA</a>
+    <a href="#event">Past Events</a>
+  </div>
+</div>
+
+
+      
       <a href="index.html#contact">CONTACT</a>
     </div>
   </div>
@@ -624,7 +679,7 @@
         </div>
       </section>
     </section>
-    <section class="eventSection">
+    <section class="eventSection" id="event">
       <h2 class="heading">Past Events</h2>
       <div class="eventCards">
         <div class="outerCard">
@@ -666,13 +721,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    // if(window.innerWidth>768){
-    //   gsap.from('.bigsap',{
-    //     opacity:0,
-    //     y:-200,
-    //     duration:2,
-    //   })
-    // }
+    
+
+  const dropdown = document.querySelector(".dropdown");
+  const btn = dropdown.querySelector(".dropbtn");
+
+  btn.addEventListener("click", function(e) {
+    e.preventDefault();
+    dropdown.classList.toggle("show");
+  });
+
+  // Close if clicked outside
+  window.addEventListener("click", function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+
+
     // GSAP animations for cards
     gsap.to(".card", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 });
     
