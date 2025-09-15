@@ -583,13 +583,13 @@
           <source src="horror.mp4" type="video/mp4">
           <source src="horror.webm" type="video/webm">
         </video>
-        <h1 id="bigh1">Technova</h1>
+        <h1 id="bigh1 bigsap">Technova</h1>
         <p>Step into the eerie world of technology and mystery — four thrilling events await: two technical challenges and two non-technical adventures.</p>
       </section>
       <section class="grid">
         <div class="card">
           <div>
-            <span class="tag">Technical</span>
+            <!-- <span class="tag">Technical</span> -->
             <h3>Escape the Dark Web</h3>
             <p>Dive into the Dark Web, where every step hides a trap.
                Crack codes, dodge phishing, and outsmart ghostly ciphers.
@@ -602,7 +602,7 @@
         </div>
         <div class="card">
           <div>
-            <span class="tag">Non-Technical</span>
+            <!-- <span class="tag">Non-Technical</span> -->
             <h3>BGMI</h3>
             <p>A battleground where teamwork,strategy,reflexes decides whether you win or get wiped out. </p>
           </div>
@@ -613,7 +613,7 @@
         </div>
         <div class="card">
           <div>
-            <span class="tag">Non-Technical</span>
+            <!-- <span class="tag">Non-Technical</span> -->
             <h3>E-FOOTBALL</h3>
             <p>Dribble, pass, and conquer the pitch — every move counts in the ultimate digital showdown.</p>
           </div>
@@ -666,7 +666,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    
+    // if(window.innerWidth>768){
+    //   gsap.from('.bigsap',{
+    //     opacity:0,
+    //     y:-200,
+    //     duration:2,
+    //   })
+    // }
     // GSAP animations for cards
     gsap.to(".card", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 });
     
@@ -761,7 +767,7 @@ const registerLinks = {
       popup.style.display = "none";
     }
     window.onclick = (e) => { if (e.target === popup) closePopup(); };
-
+  
     // Mobile menu toggle
     document.getElementById("menu-toggle").addEventListener("click", () => {
       document.getElementById("navlinks").classList.toggle("active");

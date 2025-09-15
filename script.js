@@ -291,6 +291,9 @@ timeline4.from('.outerCard1',{
   scrollTrigger:{
    trigger:'.outerCard1',
    scrub:true,
+   start:"top 80%",
+   end:"top 30%",
+  //  markers:true,
   },
   x:-100,
   opacity:0, 
@@ -300,6 +303,9 @@ timeline4.from('.outerCard2',{
   scrollTrigger:{
    trigger:'.outerCard2',
    scrub:true,
+   start:"top 80%",
+   end:"top 30%",
+  //  markers:true,
   },
   x:-100,
   opacity:0, 
@@ -309,6 +315,9 @@ timeline4.from('.outerCard3',{
   scrollTrigger:{
    trigger:'.outerCard3',
    scrub:true,
+   start:"top 80%",
+   end:"top 30%",
+  //  markers:true,
   },
   x:-100,
   opacity:0, 
