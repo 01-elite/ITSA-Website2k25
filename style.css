@@ -29,20 +29,20 @@ body {
 /* NAVBAR */
 
 /* Dropdown container */
-.dropdown {
+/* .dropdown {
   position: relative;
   display: inline-block;
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Add arrow ▾ */
-.dropbtn::after {
+/* .dropbtn::after {
   content: " ▾";
   font-size: 12px;
-}
+} */
 
 /* Dropdown hidden content */
-.dropdown-content {
+/* .dropdown-content {
   display: none;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
@@ -53,7 +53,7 @@ body {
   margin-top: 32px;
 }
 
-/* Dropdown links */
+
 .dropdown-content a {
   color: white;
   padding: 10px 15px;
@@ -66,27 +66,27 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Show dropdown on hover OR when clicked */
+
 .dropdown:hover .dropdown-content,
 .dropdown:focus-within .dropdown-content {
   display: block;
-}
+} */
 /* Mobile dropdown fix */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .dropdown-content {
-    position: static;    /* remove absolute */
-    margin-top: 10px;    /* space below the button */
-    min-width: 100%;     /* full width under nav */
-    box-shadow: none;    /* remove shadow if you want flat style */
-    border-radius: 0;    /* optional: make it flush */
+    position: static;    
+    margin-top: 10px;    
+    min-width: 100%;    
+    box-shadow: none;    
+    border-radius: 0;    
   }
 
-  /* Optional: style dropdown links differently on mobile */
+ 
   .dropdown-content a {
     padding: 12px 20px;
     border-top: 1px solid rgba(255,255,255,0.2);
   }
-}
+} */
 /* Navbar styles */
 
 .navbar {
@@ -144,7 +144,7 @@ body {
 
 /* HOME SECTION */
 .homeSection {
-  background-image: url("bgimg.png");
+  background-image: url("bgimg\ \(2\).webp");
   height: 100vh;
   width: 100%;
   display: flex;
@@ -275,7 +275,7 @@ span {
 
 
   .navlinks.active {
-    max-height: 570px;
+    max-height: 590px;
     padding: 90px;
   }
 }
@@ -810,7 +810,7 @@ background-image: linear-gradient(120deg, rgb(78, 156, 205) , #000000);
       padding: 50px 50px;
     margin: 0;
       
-      background-image: url("bgimg2.png");
+      background-image: url("bgimg2\ \(2\).webp");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top;

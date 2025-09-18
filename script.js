@@ -1,18 +1,18 @@
 
-  const dropdown = document.querySelector(".dropdown");
-  const btn = dropdown.querySelector(".dropbtn");
+  // const dropdown = document.querySelector(".dropdown");
+  // const btn = dropdown.querySelector(".dropbtn");
 
-  btn.addEventListener("click", function(e) {
-    e.preventDefault();
-    dropdown.classList.toggle("show");
-  });
+  // btn.addEventListener("click", function(e) {
+  //   e.preventDefault();
+  //   dropdown.classList.toggle("show");
+  // });
 
-  // Close if clicked outside
-  window.addEventListener("click", function(e) {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove("show");
-    }
-  });
+  // // Close if clicked outside
+  // window.addEventListener("click", function(e) {
+  //   if (!dropdown.contains(e.target)) {
+  //     dropdown.classList.remove("show");
+  //   }
+  // });
 
 
 

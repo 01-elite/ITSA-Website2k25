@@ -47,66 +47,6 @@
 
 
 
-    /* navbar */
-
-    /* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
- 
-}
-
-/* Add arrow ▾ */
-.dropbtn::after {
-  content: " ▾";
-  font-size: 12px;
-}
-
-/* Dropdown hidden content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
-  min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  z-index: 1;
-  margin-top: 32px;
-}
-
-/* Dropdown links */
-.dropdown-content a {
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-  transition: background 0.3s;
-}
-
-.dropdown-content a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Show dropdown on hover OR when clicked */
-.dropdown:hover .dropdown-content,
-.dropdown.show .dropdown-content {
-  display: block;
-}
-@media (max-width: 768px) {
-  .dropdown-content {
-    position: static;    /* remove absolute */
-    margin-top: 10px;    /* space below the button */
-    min-width: 100%;     /* full width under nav */
-    box-shadow: none;    /* remove shadow if you want flat style */
-    border-radius: 0;    /* optional: make it flush */
-  }
-
-  /* Optional: style dropdown links differently on mobile */
-  .dropdown-content a {
-    padding: 12px 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-}
 
     .navbar {
   display: flex;
@@ -616,9 +556,8 @@
     padding: 10px 10px;
   }
 }
-.dropdown .active{
-  color: #417aff;
-}
+ 
+
 
 
   </style>
@@ -632,13 +571,10 @@
       <a href="index.html#about">ABOUT</a>
       <a href="index.html#team">TEAM</a>
 
-  <div class="dropdown">
-  <a href="#event" class="dropbtn active">EVENTS</a>
-  <div class="dropdown-content">
-    <a href="event.html#upcoming" class="activate">TECHNOVA</a>
-    <a href="#event" class="activate">Past Events</a>
-  </div>
-</div>
+  
+  <a href="index.html#event" class="dropbtn ">EVENTS</a>
+  <a href="#" class="active">TECHNOVA</a>
+  
 
 
       
@@ -746,24 +682,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-  const dropdown = document.querySelector(".dropdown");
-  const btn = dropdown.querySelector(".dropbtn");
-
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('navlinks');
-
-
-  btn.addEventListener("click", function(e) {
-    e.preventDefault();
-    dropdown.classList.toggle("show");
-  });
-
-  // Close if clicked outside
-  window.addEventListener("click", function(e) {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove("show");
-    }
-  });
+ const navLinks = document.getElementById('navlinks');
+ const menuToggle = document.getElementById('menu-toggle');
 
   // Close menu when clicking outside
 document.addEventListener('click', (e) => {
