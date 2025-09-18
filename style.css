@@ -234,7 +234,9 @@ span {
 /* MEDIA QUERIES */
 @media (max-width: 1024px) {
   .navbar{
-    height: 70px;
+    width: 90%;
+    padding: 30px 10px;
+    height: 90px;
   }
   .homeH1 {
     font-size: 2.8rem;
